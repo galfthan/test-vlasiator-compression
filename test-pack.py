@@ -1,5 +1,7 @@
 import pytools as pt
 import numpy as np
+import zfpmodule as zfp
+
 cellid=1001
 blockid=100
 
@@ -37,8 +39,9 @@ for block in velspace[1]:
     print "Rel err float2  avg, max, min:",  np.average(rel_error_float2), np.max(rel_error_float2), np.min(rel_error_float2), np.median(rel_error_float2)
     print "Rel err half  avg, max, min:",  np.average(rel_error_half), np.max(rel_error_half), np.min(rel_error_half), np.median(rel_error_half)
 
+    print block
 
-    
+    zfp.compress_block(block)
 
 
 
